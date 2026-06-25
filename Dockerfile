@@ -19,4 +19,3 @@ WORKDIR /app
 COPY --from=builder /app/target/*.jar app.jar
 EXPOSE 8096
 ENTRYPOINT ["java", "-jar", "app.jar"]
-# Build stage: Maven + Temurin 26 JDK
