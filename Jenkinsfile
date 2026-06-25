@@ -22,7 +22,7 @@ pipeline {
 
         stage('2. Build & Test') {
             steps {
-                sh './mvnw clean verify -B'
+                sh 'chmod +x mvnw && ./mvnw clean verify -B'
             }
             post {
                 always {
@@ -36,6 +36,7 @@ pipeline {
             steps {
                 withSonarQubeEnv('MiSonarServer') {
                     sh """
+                        chmod +x mvnw
                         ./mvnw sonar:sonar \
                           -Dsonar.projectKey=${SONAR_PROJECT} \
                           -Dsonar.projectName="${IMAGE_NAME}" \
