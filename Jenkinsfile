@@ -7,8 +7,8 @@ pipeline {
         TAG            = "v1.0.${BUILD_NUMBER}"
         SONAR_PROJECT  = "retail-store-u202316057"
         // JDK 26 instalado en la imagen jenkins-ci-cd:2026.final
-        JAVA_HOME      = "/usr/lib/jvm/temurin-26-amd64"
-        PATH           = "/usr/lib/jvm/temurin-26-amd64/bin:${env.PATH}"
+        JAVA_HOME      = "/usr/lib/jvm/temurin-26-jdk-amd64"
+        PATH           = "/usr/lib/jvm/temurin-26-jdk-amd64/bin:${env.PATH}"
     }
 
     stages {
